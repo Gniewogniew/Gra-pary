@@ -133,8 +133,8 @@ a {
   and (max-device-width: 1024px){
 .head {
   width: 800px;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 15px;
+  margin-bottom: 15px;
   font-size: 34px;
   }
   .head .start{
@@ -146,7 +146,7 @@ a {
   }
   .room .card{
     width: 160px;
-    height: 125px;
+    height: 122px;
   }
   .room .card .front {
     margin-top: 10px;
