@@ -1,0 +1,205 @@
+body {
+  margin: 0 auto;
+  font-family: Lato, sans-serif;
+  background-image: url(../img/stage.jpg);
+  background-size: 100%;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+@font-face {
+    font-family: Lato;
+    src: url("../fonts/Lato.ttf");
+}
+
+.head {
+  background: rgba(255,255,255,0.5);
+  border: 5px inset white;
+  border-radius: 20px;
+  margin: 0 auto;
+  width: 1000px;
+  padding: 10px;
+  text-align: center;
+  margin-top: 30px;
+  font-size: 30px;
+  margin-bottom: 30px;
+}
+.room{
+  text-align: center;
+}
+
+.room .card {
+  display: inline-flex;
+  width: 160px;
+  height: 160px;
+  position: relative;
+  margin: 5px;
+  transition: .40s;
+  transform-style: preserve-3d;
+}
+.room .card .face {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  z-index: 2;
+}
+.room .card .front {
+  position: absolute;
+  background-image: url(../img/stage.jpg);
+  border: 2px inset white;
+  border-radius: 20px;
+  z-index: 1;
+}
+.room .card .back {
+  transform: rotateY(-180deg);
+  position: absolute;
+  margin-top: 15px;
+}
+
+.flip, .fliped {
+  transform: rotateY(180deg);
+  transition: .40s;
+}
+
+.board {
+  background: rgba(255,255,255,0.8);
+  position: absolute;
+  width: 700px;
+  top: 30%;
+  left: -3100px;
+  height: 500px;
+  border: 5px inset white;
+  border-radius: 20px;
+  margin: 0 auto;
+  text-align: center;
+  box-shadow: 0px 0px 50px 0px rgba(50, 50, 50, 0.82);
+}
+.open{
+  position: absolute;
+  left:600px;
+}
+
+.board .greet {
+  font-size: 45px;
+  margin-top: 80px;
+}
+
+.board .scr {
+  font-size: 27px;
+  margin: 10px;
+}
+
+.board .scr_time {
+  display: inline-flex;
+  font-size: 27px;
+  margin: 10px;
+}
+
+.board .scr_move {
+  display: inline-flex;
+  font-size: 27px;
+  margin: 10px;
+  margin-bottom: 50px;
+}
+
+.board .again, .board .selectLevel, .head .start  {
+  display: block;
+  margin: 0 auto;
+  margin-top: 10px;
+  background-image: linear-gradient(to top, #423524 0%, #eacda3 100%);
+  border-radius: 15px;
+  color: #ffffff;
+  font-size: 25px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+.board .again:hover, .board .selectLevel:hover, .head .start:hover {
+  background: #38c5de;
+  background-image: linear-gradient(to bottom, #eacda3, #994d00);
+  text-decoration: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px){
+.head {
+  width: 800px;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  font-size: 38px;
+  }
+  .head .start, .board .again, .board .selectLevel, .head .start{
+    font-size: 38px;
+    margin-top: 30px;
+    padding: 20px;
+  }
+  .room .card{
+    width: 180px;
+    height: 180px;
+  }
+  .open{
+    left: 87px;
+    width: 800px;
+    height: 750px;
+  }
+  .board .greet {
+    font-size: 60px;
+  }
+  .board .scr {
+    font-size: 50px;
+  }
+  .board .scr_time {
+    font-size: 44px;
+  }
+  .board .scr_move{
+    font-size: 44px;
+  }
+}
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 767px){
+body {
+  background-size: 110%;
+  }
+.head {
+  width: 800px;
+  margin-top: 100px;
+  margin-bottom: 150px;
+  font-size: 50px;
+  }
+  .head .start{
+    font-size: 50px;
+  }
+  .room .card{
+    width: 210px;
+    height: 210px;
+  }
+  .open{
+    left: 50px;
+    width: 867px;
+    height: 850px;
+  }
+  .board .greet {
+    font-size: 70px;
+  }
+  .board .scr {
+    font-size: 60px;
+  }
+  .board .scr_time {
+    font-size: 50px;
+  }
+  .board .scr_move{
+    font-size: 50px;
+  }
+  .head .start, .board .again, .board .selectLevel, .head .start{
+    font-size: 48px;
+    padding: 30px;
+    margin-top: 40px;
+  }
+}
