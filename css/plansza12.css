@@ -152,6 +152,7 @@ a {
     }
     #start{
         margin: 0 auto;
+        margin-top: 10px;
     }
     .time {
         float: none;
@@ -213,6 +214,7 @@ a {
     }
     #start{
         margin: 0 auto;
+        margin-top: 10px;
     }
     .time {
         float: none;
