@@ -150,6 +150,9 @@ a {
         margin-top: 20px;
         padding: 15px;
     }
+    #start{
+        margin: 0 auto;
+    }
     .time {
         float: none;
         margin-top: 1px;
@@ -207,6 +210,9 @@ a {
     }
     .head .start {
         font-size: 50px;
+    }
+    #start{
+        margin: 0 auto;
     }
     .time {
         float: none;
