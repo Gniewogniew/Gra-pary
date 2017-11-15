@@ -1,30 +1,40 @@
-body{
-	text-align: center;
-	font-family: Lato, sans-serif;
-	background-image: url(../img/stage.jpg);
+body {
+    text-align: center;
+    font-family: Lato, sans-serif;
+    background-image: url(../img/stage.jpg);
     background-size: 100%;
-    font-weight: bold;6
+    font-weight: bold;
 }
 @font-face {
     font-family: Lato;
     src: url("../fonts/Lato.ttf");
 }
-.introbox{
-	width: 1200px;
+.introbox {
+    width: 1200px;
     margin: 0 auto;
     margin-top: 150px;
 }
-h1 {
-	background: rgba(255,255,255,0.5);
-    padding: 50px;
-    font-size: 40px;
-    white-space: pre-line;
+.introtext {
+    background: rgba(255, 255, 255, 0.5);
     border: 5px inset white;
     border-radius: 20px;
+    margin-bottom: 80px;
 }
-.links{
-	width: 400px;
-	display: block;
+h1 {
+    font-size: 45px;
+}
+h2 {
+    font-size: 35px;
+    margin-bottom: 50px;
+    margin-top: 50px;
+    white-space: pre-line;
+}
+h3 {
+    font-size: 30px;
+}
+.links {
+    width: 400px;
+    display: block;
     margin: 0 auto;
     margin-top: 18px;
     background: #2cbda5;
@@ -41,46 +51,61 @@ h1 {
     border-image: initial;
 }
 .links:hover {
-  background: #38c5de;
-  background-image: linear-gradient(to bottom, #eacda3, #994d00);
-  text-decoration: none;
+    background: #38c5de;
+    background-image: linear-gradient(to bottom, #eacda3, #994d00);
+    text-decoration: none;
 }
-
-@media only screen 
-  and (min-device-width: 768px) 
-  and (max-device-width: 1024px){
-  	body {
-  background-size: 120%;
-  }
-  .introbox{
-  	width: 900px;
-  }
-  h1{
-  	margin-bottom: 120px;
-  }
-  .links{
-  	font-size: 32px;
-  	padding: 20px;
-  	margin-top: 60px;
-  }
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    body {
+        background-size: 120%;
+    }
+    .introbox {
+        width: 900px;
+    }
+    .introtext {
+        margin-bottom: 160px;
+    }
+    h1 {
+        font-size: 52px;
+    }
+    h2 {
+        font-size: 40px;
+        white-space: pre-line;
+    }
+    h3 {
+        font-size: 32px;
+    }
+    .links {
+        font-size: 32px;
+        padding: 20px;
+        margin-top: 60px;
+    }
 }
-@media only screen 
-  and (min-device-width: 320px) 
-  and (max-device-width: 767px){
-body {
-  background-size: 125%;
-  }
-  .introbox{
-  	width: 900px;
-  	margin-top: 100px;
-  }
-  h1{
-  	margin-bottom: 100px;
-  }
-  .links{
-  	font-size: 50px;
-    padding: 30px;
-    margin-top: 60px;
-    width: 500px;
-  }
+@media only screen and (min-device-width: 320px) and (max-device-width: 767px) {
+    body {
+        background-size: 125%;
+    }
+    .introbox {
+        width: 900px;
+        margin-top: 100px;
+    }
+    .introtext {
+        margin-bottom: 180px;
+        padding-bottom: 20px;
+    }
+    h1 {
+        font-size: 60px;
+    }
+    h2 {
+        font-size: 30px;
+    }
+    h3 {
+        font-size: 25px;
+    }
+    .links {
+        font-size: 50px;
+        padding: 30px;
+        margin-top: 60px;
+        width: 500px;
+    }
 }

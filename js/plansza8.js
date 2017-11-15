@@ -4,19 +4,7 @@ function main() {
     flipClick();
     $(eventsHandlers);
 }
-$(main);
-
-function eventsHandlers() {
-    ($start).click(startGame);
-    ($again).click(resetGame);
-}
-
-// sprawdź localStorage czy nie ma zapisanych wyników //
-function loadHighscore() {
-    if (localStorage.getItem(".localstorage8")) {
-        $savedScore.html(localStorage.getItem(".localstorage8"));
-    }
-}
+$(document).ready(main);
 
 var img = [
     "img/icon1.png",
@@ -42,6 +30,7 @@ var stop_fa = false,
 var $card = $('.card'),
     $board = $('.board'),
     $start = $('.start'),
+    $reset = $('.reset'),
     $again = $('.again'),
     $best = $('.best'),
     $savedScore = $(".localstorage8");
@@ -62,12 +51,34 @@ function startGame() {
     stop_fc = false;
     stop_time = false;
     $('.card').removeClass('flip');
-    $start.hide();
     randomIMG();
 }
 // zagraj jeszcze raz, załaduj ponownie stronę //
 function resetGame() {
     location.reload(true);
+}
+
+function StartResetGame(event) {
+    if (this.textContent === "Rozpocznij grę") {
+        startGame();
+        this.textContent = "Zacznij od początku";
+    } else {
+        resetGame();
+        this.textContent = "Rozpocznij grę";
+    }
+}
+
+function eventsHandlers() {
+    ($start).click(startGame, StartResetGame);
+    ($again).click(resetGame);
+}
+
+// sprawdź localStorage czy nie ma zapisanych wyników //
+function loadHighscore() {
+
+    if (localStorage.getItem(".localstorage8")) {
+        $savedScore.html(localStorage.getItem(".localstorage8"));
+    }
 }
 
 // tasowanie kart //
@@ -85,13 +96,13 @@ function randomIMG() {
 
         c_length--
 
-// css dla karty //
+        // css dla karty //
         $(this).find('.back').css({
             'background-image': 'url(' + img[temp - 1] + ')',
             'background-repeat': 'no-repeat',
             'background-size': '100%'
         });
-// dodanie data-bid //
+        // dodanie data-bid //
         $(this).find('.back').attr('data-bid', temp);
     });
 
@@ -128,7 +139,7 @@ function flipClick() {
             $('[data-bid="' + first_card + '"]').parent('.card').addClass('fliped')
             total++;
             if (total == 8) {
-// po znalezieniu wszystkich par 8 zatrzymanie czasu //
+                // po znalezieniu wszystkich par 8 zatrzymanie czasu //
                 stop_time = true;
 
                 var sec_f = pad(++sec % 60),
@@ -141,7 +152,7 @@ function flipClick() {
         if (stop_fc) {
             return
         }
-// liczeniue ruchów 2 pary - 1 ruch //
+        // liczeniue ruchów 2 pary - 1 ruch //
         count++
         if (count > 2) {
             console.log(first_card, secn_card)
@@ -155,7 +166,7 @@ function flipClick() {
         }
     });
 
-//liczenie czasu//
+    //liczenie czasu//
     var sec = 0;
 
     function pad(val) {
@@ -175,20 +186,20 @@ function flipClick() {
 function reset(move, sec, min) {
     highScore = $(".bestmove").html();
 
-// pokaż planszę końcową //
+    // pokaż planszę końcową //
     $('.board').toggleClass('open');
 
     $board.find('.scr_moves').html(move);
     $board.find('.scr_sec').html(sec);
     $board.find('.scr_min').html(min);
 
-// najlepszy wynik //
+    // najlepszy wynik //
     if (move < highScore) {
         $best.find(".bestsec").html(sec);
         $best.find(".bestmin").html(min);
         $best.find(".bestmove").html(move);
     }
-//zapisz wynik w highscore//
+    //zapisz wynik w highscore//
     localStorage.setItem(".localstorage8", $savedScore.html());
 
     return true;
