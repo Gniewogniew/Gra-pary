@@ -82,8 +82,8 @@ function eventsHandlers() {
 // sprawdź localStorage czy nie ma zapisanych wyników //
 function loadHighscore() {
 
-    if (localStorage.getItem(".localstorage8")) {
-        $savedScore.html(localStorage.getItem(".localstorage8"));
+    if (localStorage.getItem(".localstorage15")) {
+        $savedScore.html(localStorage.getItem(".localstorage15"));
     }
 }
 // tasowanie kart //
